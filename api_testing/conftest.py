@@ -1,6 +1,13 @@
-browser.config.base_url
-browser.open('http://some-site.ru/api/users')
-browser.open('/users')
+import pytest
+from selene import browser
 
-- [ ]  Подключено красивое логирование от *Allure* (`allure.attach`  как для  *request*, так и для *response)*
-- [ ]  Подключено логирование в консоль (*уровень логирования, дата, время, код ответа, client url*)
+
+@pytest.fixture(scope="function")
+def browser_setup():
+    browser.config.window_width = 1920
+    browser.config.window_height = 1080
+    browser.config.base_url = 'https://demowebshop.tricentis.com'
+
+    yield
+
+    browser.quit()

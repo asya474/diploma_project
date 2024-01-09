@@ -1,0 +1,10 @@
+selene>=2.0.0rc4
+Appium-Python-Client
+python-dotenv~=1.0.0
+pydantic==2.5.2
+pydantic-settings
+pytest~=7.4.3
+requests~=2.27.1
+jsonschema~=4.4.0
+allure-pytest~=2.9.45
+selenium~=4.15.2
