@@ -1,12 +1,16 @@
 # # Demo test automation project (UI, Mobile, API) 
 ## :page_with_curl:    Content
-> :heavy_check_mark: [Technology stack](#classical_building-technology-stack)
+> :heavy_check_mark: [Technology stack](#technology_stack)
 >
-> :heavy_check_mark: [Running tests from the terminal](#running-tests-from-the-terminal)
+> :heavy_check_mark: [Running tests from the terminal](#running_tests_from_the_terminal)
 >
-> :heavy_check_mark: [Running Tests in Jenkins](#robot-remote-test-running)
+> :heavy_check_mark: [Running Tests in Jenkins](#running_tests_in_jenkins)
 >
 > :heavy_check_mark: [Test results report in Allure Report](#skier-main-page-of-allure-report)
+> 
+> :heavy_check_mark: [Integration with Allure TestOps](#skier-allure-testops)
+> 
+> :heavy_check_mark: [Integration with Jira](#skier-jira)
 >
 > :heavy_check_mark: [Telegram notifications using a bot](#-telegram-notifications-using-a-bot)
 >
@@ -91,9 +95,13 @@ There are some conditions for local mobile tests running:
 >
 > <code>BROWSER_SIZE</code> – the size of the browser window the tests will be run (_default - <code>1920x1080</code>_).
 
-Отчеты с видео, скриншотом, логами браузера
-Сборка проекта в Jenkins
-Отчеты Allure Report
-Интеграция с Allure TestOps
-Автоматизация отчетности о тестовых прогонах в Jira
-Запуск автотестов в Selenoid
+
+[Test results report in Allure Report](#skier-main-page-of-allure-report)
+
+#skier-allure-testops
+
+#skier-jira
+
+#telegram-notifications-using-a-bot
+
+#an-example-of-running-a-test-in-selenoid
