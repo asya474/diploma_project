@@ -1,4 +1,4 @@
-# # Demo test automation project (UI, Mobile, API) 
+#  Demo test automation project (UI, Mobile, API) 
 ## :page_with_curl:    Content
 > :heavy_check_mark: [Technology stack](#technology-stack)
 >
@@ -42,7 +42,7 @@ In this project, autotests are written in <code> Python </code> using:
 >
 > After completed run, notifications are sent in <code>Telegram</code>.
 
-## running_tests_in_jenkins
+## :technologist:Running Tests in Jenkins
 
 #### UI-tests:
 ```
