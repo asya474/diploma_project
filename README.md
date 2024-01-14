@@ -1,8 +1,8 @@
 # # Demo test automation project (UI, Mobile, API) 
 ## :page_with_curl:    Content
-> :heavy_check_mark: [Technology stack](#technology_stack)
+> :heavy_check_mark: [Technology stack](#technology-stack)
 >
-> :heavy_check_mark: [Running tests from the terminal](#running_tests_from_the_terminal)
+> :heavy_check_mark: [Running tests from the terminal](#running-tests-from-the-terminal)
 >
 > :heavy_check_mark: [Running Tests in Jenkins](#running_tests_in_jenkins)
 >
