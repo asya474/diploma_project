@@ -14,17 +14,15 @@
 >
 > :heavy_check_mark: [An example of running a test in Selenoid](#example-of-running-a-test-in-selenoid)
 
-## :technologist: Technology stack
+## Technology stack
 
 <p align="center"
-<a href="https://www.python.org/"><img src="files/readme_images/python.svg" width="50" height="50"  alt="PYTHON"/></a>
-<a href="https://www.selenium.dev/"><img src="files/readme_images/selenium.svg" width="50" height="50"  alt="SELENIUM"/></a>
-<a href="https://docs.pytest.org/en/"><img src="files/readme_images/pytest.svg" width="50" height="50"  alt="SELENIUM"/></a>
-<a href="https://www.jetbrains.com/ru-ru/pycharm/"><img src="files/readme_images/pycharm.svg" width="50" height="50"  alt="PYCHARM"/></a>
-<a href="https://docs.pydantic.dev/latest/"><img src="files/readme_images/pydantic.svg" width="50" height="50"  alt="PYDANTIC"/></a>
-<a href="https://pypi.org/project/python-dotenv/"><img src="files/readme_images/dotenv.svg" width="50" height="50"  alt=".ENV"/></a>
-<a href="https://www.jenkins.io/"><img src="files/readme_images/jenkins.svg" width="50" height="50"  alt="JENKINS"/></a>
-<a href="https://python-poetry.org/"><img src="files/readme_images/poetry.svg" width="50" height="50"  alt="POETRY"/></a>
+<a href="https://www.python.org/"><img src="files/readme_images/python.png" width="50" height="50"  alt="PYTHON"/></a>
+<a href="https://www.selenium.dev/"><img src="files/readme_images/selenium.png" width="50" height="50"  alt="SELENIUM"/></a>
+<a href="https://docs.pytest.org/en/"><img src="files/readme_images/pytest.png" width="50" height="50"  alt="PYTEST"/></a>
+<a href="https://www.jetbrains.com/ru-ru/pycharm/"><img src="files/readme_images/intellij_pycharm.png" width="50" height="50"  alt="PYCHARM"/></a>
+<a href="https://www.jenkins.io/"><img src="files/readme_images/jenkins.png" width="50" height="50"  alt="JENKINS"/></a>
+<a href="https://python-poetry.org/"><img src="files/readme_images/selene.png" width="50" height="50"  alt="SELENE"/></a>
 </p>
 
 In this project, autotests are written in <code> Python </code> using:
@@ -42,7 +40,7 @@ In this project, autotests are written in <code> Python </code> using:
 >
 > After completed run, notifications are sent in <code>Telegram</code>.
 
-## :technologist: Running Tests in Jenkins
+## Running Tests in Jenkins
 
 #### UI-tests:
 ```
@@ -82,7 +80,7 @@ There are some conditions for local mobile tests running:
  - <code>Appium Server</code> is running;
  - android emulator device is enabled in AndroidStudio;
 
-### :robot: Build Options
+### Build Options
 > <code>REMOTE_URL</code> – the address of the remote server where the tests will run.
 >
 > <code>BROWSER</code> – the browser the tests will be run (_default - <code>chrome</code>_).
@@ -92,12 +90,12 @@ There are some conditions for local mobile tests running:
 > <code>BROWSER_SIZE</code> – the size of the browser window the tests will be run (_default - <code>1920x1080</code>_).
 
 
-[Test results report in Allure Report](#skier-main-page-of-allure-report)
+## Test results report in Allure Report
 
-#skier-allure-testops
+## Integration with Allure TestOps
 
-#skier-jira
+## Integration with Jira
 
-#telegram-notifications-using-a-bot
+## Telegram notifications using a bot
 
-#an-example-of-running-a-test-in-selenoid
+## An example of running a test in Selenoid
