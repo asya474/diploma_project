@@ -42,7 +42,7 @@ In this project, autotests are written in <code> Python </code> using:
 >
 > After completed run, notifications are sent in <code>Telegram</code>.
 
-## Running Tests in Jenkins
+## running_tests_in_jenkins
 
 #### UI-tests:
 ```
