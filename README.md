@@ -38,13 +38,13 @@ In this project, autotests are written in <code> Python </code> using:
 >
 > <code>Jenkins</code> runs the tests.
 >
-> After the run is completed, notifications are sent using the bot to <code>Telegram</code>.
+> After completed run, notifications are sent in <code>Telegram</code>.
 
 ## Running tests from the terminal
 
 ### :robot: Remote test running
 
-#### UI-тесты:
+#### UI-tests:
 ```
 python -m venv .venv
 source .venv/bin/activate
@@ -53,7 +53,7 @@ poetry install --no-root
 pytest --browser=${BROWSER} --browser_version=${BROWSER_VERSION} tests/web
 ```
 
-#### API-тесты:
+#### API-tests:
 ```
 python -m venv .venv
 source .venv/bin/activate
@@ -62,7 +62,7 @@ poetry install --no-root
 pytest tests/api
 ```
 
-#### Мобильные тесты:
+#### Mobile tests:
 ```
 python -m venv .venv
 source .venv/bin/activate
@@ -70,31 +70,17 @@ pip install poetry
 poetry install --no-root
 pytest --env=${ENV} tests/mobile
 ```
-
-### :robot: Running Tests Locally
-Для локального запуска с значениями по умолчанию необходимо выполнить команду:
-```
-python -m venv .venv
-source .venv/bin/activate
-pip install poetry
-poetry install --no-root
-pytest tests
-```
-
-#### Запуск мобильных тестов
-
-Мобильные тесты могут быть запущены как в <code>BrowserStack</code>, так и локально. 
-Для запуска в BrowserStack:
+For running in BrowserStack:
 ```
 pytest --env=browserstack tests/mobile/
 ```
-Для запуска локально:
+For local running:
 ```
 pytest --env=local tests/mobile/
 ```
-Для локального запуска мобильных тестов необходимо соблюдение некоторых условий:
- - <code>Appium Server</code> запущен;
- - включен эмулятор в AndroidStudio;
+There are some conditions for local mobile tests running:
+ - <code>Appium Server</code> is running;
+ - android emulator device is enabled in AndroidStudio;
 
 ### :robot: Build Options
 > <code>REMOTE_URL</code> – the address of the remote server where the tests will run.
