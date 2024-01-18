@@ -3,7 +3,7 @@ from appium.webdriver.common.appiumby import AppiumBy
 from selene import browser, have, be
 
 
-def test_onboarding_screen_and_search():
+def test_onboarding_screen_and_search(android_mobile_management):
     with allure.step('Verify content page 1'):
         results = browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/primaryTextView'))
         results.should(have.exact_text("The Free Encyclopedia\n…in over 300 languages"))
