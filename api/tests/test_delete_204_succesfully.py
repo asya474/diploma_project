@@ -1,3 +1,7 @@
+import requests
+from requests import Response
+
+
 def test_delete_204_succesfully():
     url = "https://reqres.in/api/users/2"
 

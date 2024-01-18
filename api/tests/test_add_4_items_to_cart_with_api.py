@@ -1,3 +1,5 @@
+from allure_commons._allure import step
+from selene import browser, have
 from api.utils import demowebshop_api_post
 
 

@@ -1,3 +1,7 @@
+from allure_commons._allure import step
+from selene import browser, have
+from api.utils import demowebshop_api_post
+
 def test_add_different_items_to_cart_with_api():
     browser.config.base_url = 'https://demowebshop.tricentis.com'
     response = demowebshop_api_post('/addproducttocart/details/28/1',

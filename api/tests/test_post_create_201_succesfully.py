@@ -1,6 +1,7 @@
 import jsonschema
 import requests
 from requests import Response
+from api.utils import load_schema
 
 def test_post_create_201_succesfully():
     url = "https://reqres.in/api/users"

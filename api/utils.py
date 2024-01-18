@@ -1,26 +1,19 @@
 import json
+import logging
+import allure
+import requests
+from allure_commons._allure import step
+from allure_commons.types import AttachmentType
 import os
 
 SCHEMA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'schema')
-
+API_BASE_URL = 'https://demowebshop.tricentis.com'
+#WEB_BASE_URL = 'https://demowebshop.tricentis.com'
 
 def load_schema(filepath):
     with open(os.path.join(SCHEMA_PATH, filepath)) as file:
         schema = json.load(file)
         return schema
-
-import json
-import logging
-import allure
-import requests
-import pytest
-from allure_commons._allure import step
-from allure_commons.types import AttachmentType
-from selene import browser, have
-
-API_BASE_URL = 'https://demowebshop.tricentis.com'
-WEB_BASE_URL = 'https://demowebshop.tricentis.com'
-
 
 def demowebshop_api_post(url, **kwargs):
     with step("API POST Request"):

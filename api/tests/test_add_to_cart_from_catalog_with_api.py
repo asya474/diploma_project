@@ -1,10 +1,4 @@
-import json
-import logging
-import allure
-import requests
-import pytest
 from allure_commons._allure import step
-from allure_commons.types import AttachmentType
 from selene import browser, have
 from api.utils import demowebshop_api_post
 
