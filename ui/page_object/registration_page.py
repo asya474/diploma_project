@@ -2,7 +2,7 @@ from selene import browser, have, command, be
 from ui.data import image
 
 
-class PracticeFormRegistrationFactCheck:
+class RegistrationPage:
     def open(self):
         browser.open('https://demoqa.com/automation-practice-form')
         browser.all('[id^=google_ads][id$=container__]').with_(timeout=10).wait_until(
