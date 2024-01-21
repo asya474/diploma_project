@@ -6,12 +6,12 @@ from allure_commons._allure import step
 from allure_commons.types import AttachmentType
 import os
 
-SCHEMA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'schema')
+SCHEMA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)))
 API_BASE_URL = 'https://demowebshop.tricentis.com'
 #WEB_BASE_URL = 'https://demowebshop.tricentis.com'
 
 def load_schema(filepath):
-    with open(os.path.join(SCHEMA_PATH, filepath)) as file:
+    with open(os.path.join(SCHEMA_PATH,  filepath)) as file:
         schema = json.load(file)
         return schema
 
