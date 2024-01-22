@@ -1,8 +1,8 @@
 import os
 from appium.options.android import UiAutomator2Options
 from dotenv import load_dotenv
-import utils
 from pydantic import BaseModel
+from mobile.utils import file
 
 
 class Config(BaseModel):
@@ -11,11 +11,11 @@ class Config(BaseModel):
     device_name: str = os.getenv('DEVICE_NAME')
     udid: str = os.getenv('UDID')
     appWaitActivity: str = os.getenv('APP_WAIT_ACTIVITY')
-    app_local: str = utils.file.abs_path_from_project(os.getenv('APP'))
+    app_local: str = file.abs_path_from_project(os.getenv('APP'))
     app_bstack: str = os.getenv('APP')
     platformName: str = os.getenv('PLATFORM_NAME')
     platformVersion: str = os.getenv('PLATFORM_VERSION')
-    load_dotenv(dotenv_path=utils.file.abs_path_from_project('.env.credentials'))
+    load_dotenv(dotenv_path=file.abs_path_from_project('.env.credentials'))
     userName: str = os.getenv('USER_NAME')
     accessKey: str = os.getenv('ACCESS_KEY')
 
