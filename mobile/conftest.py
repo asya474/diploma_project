@@ -1,63 +1,68 @@
-import os
-import allure
-import allure_commons
 import pytest
-from selene import browser, support
+import json
+from appium.options.android import UiAutomator2Options
+from selene.support.shared import browser
 from appium import webdriver
+from config import Settings
 from dotenv import load_dotenv
-from mobile.config import Config
-from mobile.utils import allure_attach
+from helper.get_env_path import get_app_path, get_mobile_env_path
+from helper.attach_helpers import mobile_attach_video
 
-config = Config(context="local_emulator")
 
 def pytest_addoption(parser):
     parser.addoption(
-        "--context",
-        default="bstack",
-        help="Specify the test context"
+        '--env',
+        help='Environment for test',
+        choices=['browserstack', 'local'],
+        default='browserstack'
     )
 
 
-def pytest_configure(config):
-    context = config.getoption("--context")
-    env_file_path = f".env.{context}"
+@pytest.fixture(scope='function')
+def set_mobile_browser(request):
+    environment = request.config.getoption('--env')
 
-    if os.path.exists(env_file_path):
-        load_dotenv(dotenv_path=env_file_path)
-    else:
-        print(f"Warning: Configuration file '{env_file_path}' not found.")
+    load_dotenv(get_mobile_env_path(environment))
+    settings = Settings()
+    options = UiAutomator2Options()
 
+    if environment == 'browserstack':
+        options.load_capabilities({
+            "platformName": settings.platformName,
+            "platformVersion": settings.platformVersion,
+            "deviceName": settings.deviceName,
 
-@pytest.fixture
-def context(request):
-    return request.config.getoption("--context")
+            # Set URL of the application under test
+            "app": settings.app,
 
+            # Set other BrowserStack capabilities
+            'bstack:options': {
+                "projectName": settings.projectName,
+                "buildName": settings.buildName,
+                "sessionName": settings.sessionName,
+                'networkLogs': settings.networkLogs,
 
-@pytest.fixture(scope='function', autouse=True)
-def android_mobile_management(context):
-    options = config.to_driver_options(context=context)
+                # Set your access credentials
+                "userName": settings.userName,
+                "accessKey": settings.accessKey
+            }
+        })
 
-    with allure.step('setup app session'):
-        browser.config.driver = webdriver.Remote(
-            options.get_capability('remote_url'),
-            options=options
-        )
+    elif environment == 'local':
+        options.load_capabilities({
+            'appium:automationName': settings.automationName,
+            'appium:app': get_app_path(settings.app),
+            'platformName': settings.platformName,
+            'appium:appWaitActivity': settings.appWaitActivity
+        })
 
-    browser.config.timeout = 100.0
+    browser.config.driver = webdriver.Remote(settings.remoteBrowser, options=options)
 
-    browser.config._wait_decorator = support._logging.wait_with(
-        context=allure_commons._allure.StepContext)
+    yield environment
 
-    yield
+    if environment == 'browserstack':
+        session_id = browser.execute_script('browserstack_executor: {"action": "getSessionDetails"}')
+        video_url = json.loads(session_id)['video_url']
+        mobile_attach_video(video_url)
 
-    allure_attach.screenshot()
-
-    allure_attach.page_source_xml()
-
-    session_id = browser.driver.session_id
-
-    with allure.step('tear down app session with id' + session_id):
-        browser.quit()
-
-    if context == 'bstack':
-        allure_attach.bstack_video(session_id)
+    browser.quit()

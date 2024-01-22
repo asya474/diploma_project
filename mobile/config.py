@@ -1,57 +1,42 @@
-import os
-from appium.options.android import UiAutomator2Options
-from dotenv import load_dotenv
-from pydantic import BaseModel
-from mobile.utils import file
+from pydantic_settings import BaseSettings
+from typing import Optional
 
 
-class Config(BaseModel):
-    context: str
-    remote_url: str = os.getenv('REMOTE_URL')
-    device_name: str = os.getenv('DEVICE_NAME')
-    udid: str = os.getenv('UDID')
-    appWaitActivity: str = os.getenv('APP_WAIT_ACTIVITY')
-    app_local: str = file.abs_path_from_project(os.getenv('APP'))
-    app_bstack: str = os.getenv('APP')
-    platformName: str = os.getenv('PLATFORM_NAME')
-    platformVersion: str = os.getenv('PLATFORM_VERSION')
-    load_dotenv(dotenv_path=file.abs_path_from_project('.env.credentials'))
-    userName: str = os.getenv('USER_NAME')
-    accessKey: str = os.getenv('ACCESS_KEY')
+class Settings(BaseSettings):
 
-    def to_driver_options(self, context):
-        options = UiAutomator2Options()
+    #  Appium settings
+    platformName: str = None
+    platformVersion: str = None
+    deviceName: Optional[str] = None
+    app: str = None
+    appWaitActivity: Optional[str] = None
+    automationName: Optional[str] = None
 
-        if context == 'local_emulator':
-            options.set_capability('remote_url', self.remote_url)
-            options.set_capability('udid', self.udid)
-            options.set_capability('appWaitActivity', self.appWaitActivity)
-            options.set_capability('app', self.app_local)
+    # BrowserStack settings
+    projectName: Optional[str] = None
+    buildName: Optional[str] = None
+    sessionName: Optional[str] = None
+    networkLogs: Optional[bool] = False
 
-        if context == 'local_real_device':
-            options.set_capability('remote_url', self.remote_url)
-            options.set_capability('udid', self.udid)
-            options.set_capability('appWaitActivity', self.appWaitActivity)
-            options.set_capability('app', self.app_local)
+    # BrowserStack conditionals
+    userName: Optional[str] = None
+    accessKey: Optional[str] = None
 
-        if context == 'bstack':
-            options.set_capability('remote_url', self.remote_url)
-            options.set_capability('deviceName', self.device_name)
-            options.set_capability('platformName', self.platformName)
-            options.set_capability('platformVersion', self.platformVersion)
-            options.set_capability('appWaitActivity', self.appWaitActivity)
-            options.set_capability('app', self.app_bstack)
-            options.set_capability(
-                'bstack:options', {
-                    'projectName': 'Wikipedia tests project',
-                    'buildName': 'Wikipedia-app-build',
-                    'sessionName': 'Wikipedia tests',
-                    'userName': self.userName,
-                    'accessKey': self.accessKey,
-                },
-            )
+    remoteBrowser: str = None
 
-        return options
-
-
-#config = Config(context="local_emulator")
+    class Config:
+        fields = {
+            'platformName': 'platformName',
+            'platformVersion': 'platformVersion',
+            'deviceName': 'deviceName',
+            'app': 'app',
+            'appWaitActivity': 'appWaitActivity',
+            'automationName': 'automationName',
+            'projectName': 'projectName',
+            'buildName':'buildName',
+            'sessionName': 'sessionName',
+            'networkLogs': 'networkLogs',
+            'userName': 'userName',
+            'accessKey': 'accessKey',
+            'remoteBrowser': 'remoteBrowser'
+        }
