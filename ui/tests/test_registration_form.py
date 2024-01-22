@@ -1,8 +1,6 @@
-import allure
 from allure_commons.types import Severity
 from ui.data.users import User
 from ui.page_object.registration_page import PracticeFormRegistrationFactCheck
-
 import allure
 
 practice_form = PracticeFormRegistrationFactCheck()

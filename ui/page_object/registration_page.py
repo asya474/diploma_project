@@ -1,7 +1,5 @@
 import os
-
 from selene import browser, be, have, command
-
 from ui.data import image
 
 
