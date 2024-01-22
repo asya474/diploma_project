@@ -1,26 +1,10 @@
-import os
 import allure
+import os
 import requests
 from selene import browser
 
 
-def screenshot():
-    allure.attach(
-        browser.driver.get_screenshot_as_png(),
-        name='screenshot',
-        attachment_type=allure.attachment_type.PNG
-    )
-
-
-def page_source_xml():
-    allure.attach(
-        browser.driver.page_source,
-        name='page_source_xml',
-        attachment_type=allure.attachment_type.XML
-    )
-
-
-def attach_bstack_video(session_id):
+def bstack_video(session_id):
     bstack_session = requests.get(
         f'https://api.browserstack.com/app-automate/sessions/{session_id}.json',
         auth=(os.getenv('USER_NAME'), os.getenv('ACCESS_KEY')),
@@ -38,17 +22,17 @@ def attach_bstack_video(session_id):
     )
 
 
-def attach_bstack_screenshot():
+def screenshot():
     allure.attach(
         browser.driver.get_screenshot_as_png(),
         name='screenshot',
-        attachment_type=allure.attachment_type.PNG,
+        attachment_type=allure.attachment_type.PNG
     )
 
 
-def attach_bstack_page_source():
+def page_source_xml():
     allure.attach(
         browser.driver.page_source,
         name='page_source_xml',
-        attachment_type=allure.attachment_type.XML,
+        attachment_type=allure.attachment_type.XML
     )
