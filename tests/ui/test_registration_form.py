@@ -23,7 +23,7 @@ def test_student_registration_form(setup_browser):
                     month_of_birth='January',
                     phone_number='2589632147',
                     year_of_birth='2024',
-                    day_of_birth='22',
+                    day_of_birth='25',
                     subject='Physics',
                     hobby='Reading',
                     image='hedgehog.jpg',

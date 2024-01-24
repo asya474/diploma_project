@@ -1,9 +1,9 @@
-from typing import Optional
-
 from pydantic_settings import BaseSettings
+from typing import Optional
 
 
 class Settings(BaseSettings):
+
     #  Appium settings
     platformName: str = None
     platformVersion: str = None
@@ -33,7 +33,7 @@ class Settings(BaseSettings):
             'appWaitActivity': 'appWaitActivity',
             'automationName': 'automationName',
             'projectName': 'projectName',
-            'buildName': 'buildName',
+            'buildName':'buildName',
             'sessionName': 'sessionName',
             'networkLogs': 'networkLogs',
             'userName': 'userName',
