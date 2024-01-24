@@ -92,10 +92,6 @@ There are some conditions for local mobile tests running:
 
 ## Test results report in Allure Report
 
-## Integration with Allure TestOps
-
-## Integration with Jira
-
 ## Telegram notifications using a bot
 
 ## An example of running a test in Selenoid
