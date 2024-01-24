@@ -7,14 +7,14 @@ import requests
 from allure_commons._allure import step
 from allure_commons.types import AttachmentType
 
-SCHEMA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)))
 API_BASE_URL = 'https://demowebshop.tricentis.com'
 
 
-def load_schema(filepath):
-    with open(os.path.join(SCHEMA_PATH, filepath)) as file:
-        schema = json.load(file)
-        return schema
+def load_schema(filename: str):
+    schema_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+                               'schemas', filename)
+    with open(schema_path) as schema:
+        return json.loads(schema.read())
 
 
 def demowebshop_api_post(url, **kwargs):

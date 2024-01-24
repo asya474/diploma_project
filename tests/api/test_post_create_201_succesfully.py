@@ -5,9 +5,9 @@ from requests import Response
 from helper.api_helpers.utils import load_schema
 
 
-def test_post_create_201_succesfully():
+def test_post_create_201_succesfully(browser_setup):
     url = "https://reqres.in/api/users"
-    schema = load_schema("json_schemes/post_create.json")
+    schema = load_schema("post_create.json")
 
     result: Response = requests.post(url)
 

@@ -5,9 +5,9 @@ from requests import Response
 from helper.api_helpers.utils import load_schema
 
 
-def test_post_register_400_unsuccessfully():
+def test_post_register_400_unsuccessfully(browser_setup):
     url = "https://reqres.in/api/register"
-    schema = load_schema("json_schemes/post_400.json")
+    schema = load_schema("post_400.json")
 
     result: Response = requests.post(url)
 
