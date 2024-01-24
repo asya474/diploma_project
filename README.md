@@ -102,4 +102,4 @@ There are some conditions for local mobile tests running:
 
 ## An example of running a test in Selenoid
 
-![autotest_gif] (files/readme_images/selenoid.gif)
+![autotest_gif](files/readme_images/selenoid.gif)
