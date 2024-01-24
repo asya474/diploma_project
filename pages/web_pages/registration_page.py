@@ -1,6 +1,6 @@
 import os
 from selene import browser, be, have, command
-from ui.data import image
+from helper.web_helpers.data import image
 
 
 class PracticeFormRegistrationFactCheck:

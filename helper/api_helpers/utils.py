@@ -8,7 +8,6 @@ import os
 
 SCHEMA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)))
 API_BASE_URL = 'https://demowebshop.tricentis.com'
-#WEB_BASE_URL = 'https://demowebshop.tricentis.com'
 
 def load_schema(filepath):
     with open(os.path.join(SCHEMA_PATH,  filepath)) as file:

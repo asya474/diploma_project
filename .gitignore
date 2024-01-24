@@ -1,3 +1,24 @@
+# CACHE AND IDEA FILES
+tests/api/.pytest_cache
+.idea
+.DS_Store
+files/.DS_Store
+tests/web/.pytest_cache
+helper/__pycache__
+tests/api/__pycache__
+helper/mobile_helper/__pycache__
+pages/mobile_pages/__pycache__
+tests/mobile/__pycache__
+helper/api_helpers/__pycache__
+.venv
+helper/web_helpers/__pycache__
+pages/web_pages/__pycache__
+tests/web/__pycache__
 
-/ui/tests/allure-results/
-/mobile/tests/allure-results/
+# SENSETIVE DATA
+.env.personal_data.private
+tests/mobile/.env.mobile.browserstack
+tests/mobile/.env.mobile.local
+
+# ALLURE
+allure-results

@@ -3,7 +3,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import pytest
 from selene.support.shared import browser
-from utils import attach
+from tests.ui.utils import attach
+
 
 @pytest.fixture(params=[(3840, 2160), (1920, 1080)])
 def desktop_browser(request):
