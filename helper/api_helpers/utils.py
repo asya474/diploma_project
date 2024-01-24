@@ -1,18 +1,21 @@
 import json
 import logging
+import os
+
 import allure
 import requests
 from allure_commons._allure import step
 from allure_commons.types import AttachmentType
-import os
 
 SCHEMA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)))
 API_BASE_URL = 'https://demowebshop.tricentis.com'
 
+
 def load_schema(filepath):
-    with open(os.path.join(SCHEMA_PATH,  filepath)) as file:
+    with open(os.path.join(SCHEMA_PATH, filepath)) as file:
         schema = json.load(file)
         return schema
+
 
 def demowebshop_api_post(url, **kwargs):
     with step("API POST Request"):
@@ -33,6 +36,3 @@ def demowebshop_api_post(url, **kwargs):
         logging.info("Response code " + str(result.status_code))
         logging.info("Response: " + result.text)
     return result
-
-
-

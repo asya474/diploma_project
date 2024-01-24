@@ -1,9 +1,10 @@
+import pytest
 from selene import browser
+from selene.support.shared import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-import pytest
-from selene.support.shared import browser
-from tests.ui.utils import attach
+
+from helper.attach_helpers import add_screenshot, add_logs, add_html, add_video
 
 
 @pytest.fixture(params=[(3840, 2160), (1920, 1080)])
@@ -41,9 +42,9 @@ def setup_browser(request):
 
     yield browser
 
-    attach.add_screenshot(browser)
-    attach.add_logs(browser)
-    attach.add_html(browser)
-    attach.add_video(browser)
+    add_screenshot(browser)
+    add_logs(browser)
+    add_html(browser)
+    add_video(browser)
 
     browser.quit()

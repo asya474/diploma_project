@@ -1,12 +1,14 @@
-import pytest
 import json
-from appium.options.android import UiAutomator2Options
-from selene.support.shared import browser
+
+import pytest
 from appium import webdriver
-from config import Settings
+from appium.options.android import UiAutomator2Options
 from dotenv import load_dotenv
-from helper.get_env_path import get_app_path, get_mobile_env_path
+from selene.support.shared import browser
+
+from config import Settings
 from helper.attach_helpers import mobile_attach_video
+from helper.get_env_path import get_app_path, get_mobile_env_path
 
 
 def pytest_addoption(parser):

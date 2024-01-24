@@ -1,7 +1,8 @@
-from allure_commons.types import Severity
-from helper.web_helpers.data.users import User
-from pages.web_pages.registration_page import PracticeFormRegistrationFactCheck
 import allure
+from allure_commons.types import Severity
+
+from helper.web_helpers.users import User
+from pages.web_pages.registration_page import PracticeFormRegistrationFactCheck
 
 practice_form = PracticeFormRegistrationFactCheck()
 
@@ -19,7 +20,7 @@ def test_student_registration_form(setup_browser):
                     last_name='Фамилия',
                     email='testmail@mail.gg',
                     gender='Other',
-                     month_of_birth='January',
+                    month_of_birth='January',
                     phone_number='2589632147',
                     year_of_birth='2024',
                     day_of_birth='22',
