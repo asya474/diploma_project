@@ -37,8 +37,8 @@ def setup_browser(request):
     browser.config.base_url = "https://demoqa.com"
     browser.config.driver = driver
     browser.config.timeout = 6.0
-    browser.config.window_width = 412
-    browser.config.window_height = 914
+    browser.config.window_width = 333
+    browser.config.window_height = 628
 
     yield browser
 

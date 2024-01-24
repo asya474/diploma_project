@@ -27,7 +27,6 @@ class PracticeFormRegistrationFactCheck:
         ).click()
         browser.element('#subjectsInput').type(user.subject).press_enter()
         browser.element('#uploadPicture').should(be.visible).type(os.path.abspath("hedgehog.jpg"))
-        browser.element('#uploadPicture').send_keys(get_env_path.path(user.image))
         browser.element('#currentAddress').type(user.address)
         browser.element('//*[@id="hobbiesWrapper"]/div[2]/div[2]/label').should(be.visible).with_(timeout=20).click()
         browser.element('#react-select-3-input').type(user.state).press_enter()
