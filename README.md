@@ -101,3 +101,4 @@ There are some conditions for local mobile tests running:
 ## Telegram notifications using a bot
 
 ## An example of running a test in Selenoid
+<img src="files/readme_images/selenoid.gif" alt="SELENOID RUN"/>
