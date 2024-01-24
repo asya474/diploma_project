@@ -101,4 +101,4 @@ There are some conditions for local mobile tests running:
 ## Telegram notifications using a bot
 
 ## An example of running a test in Selenoid
-![](selenoid.gif)
+![autotest_gif](selenoid.gif)
