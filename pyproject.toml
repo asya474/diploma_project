@@ -4,7 +4,6 @@ version = "0.1.0"
 description = ""
 authors = ["asya474 <asya474@gmail.com>"]
 readme = "README.md"
-packages = [{include = "qa_guru_diploma"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -16,10 +15,9 @@ selenium = "^4.15.2"
 allure-pytest = "^2.9.45"
 jsonschema = "^4.4.0"
 appium-python-client = "3.1.1"
-utils = "1.0.2"
-pydantic = "^2.5.2"
-pydantic-settings = "^2.0.2"
-curlify = "^2.2.1"
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^3.0.2"
 
 [build-system]
 requires = ["poetry-core"]
