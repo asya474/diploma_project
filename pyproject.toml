@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "qa_guru_diploma"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.8"
 pytest = "^7.4.0"
 requests = "^2.0.0"
 python-dotenv = "^1.0.0"
