@@ -7,20 +7,6 @@ from selenium.webdriver.chrome.options import Options
 from helper.attach_helpers import add_screenshot, add_logs, add_html, add_video
 
 
-@pytest.fixture(params=[(3840, 2160), (1920, 1080)])
-def desktop_browser(request):
-    width, height = request.param
-    browser.config.window_width = width
-    browser.config.window_height = height
-
-
-@pytest.fixture(params=[(1024, 768), (800, 600)])
-def mobile_browser(request):
-    width, height = request.param
-    browser.config.window_width = width
-    browser.config.window_height = height
-
-
 @pytest.fixture(scope='function', autouse=True)
 def setup_browser(request):
     options = Options()

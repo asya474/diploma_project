@@ -5,8 +5,9 @@ from appium import webdriver
 from appium.options.android import UiAutomator2Options
 from dotenv import load_dotenv
 from selene.support.shared import browser
-from . import helper as helper
+
 from config import Settings
+from . import helper as helper
 
 
 def pytest_addoption(parser):

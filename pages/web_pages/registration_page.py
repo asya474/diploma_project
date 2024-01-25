@@ -2,8 +2,6 @@ import os
 
 from selene import browser, be, have, command
 
-from helper import get_env_path
-
 
 class PracticeFormRegistrationFactCheck:
     def open(self):
