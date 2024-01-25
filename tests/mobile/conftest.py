@@ -5,10 +5,12 @@ from appium import webdriver
 from appium.options.android import UiAutomator2Options
 from dotenv import load_dotenv
 from selene.support.shared import browser
-
+import helper
 from config import Settings
-from helper.attach_helpers import mobile_attach_video
-from helper.get_env_path import get_app_path, get_mobile_env_path
+
+
+#from helper.attach_helpers import mobile_attach_video
+#from helper.get_env_path import get_app_path, get_mobile_env_path
 
 
 def pytest_addoption(parser):
@@ -24,7 +26,7 @@ def pytest_addoption(parser):
 def set_mobile_browser(request):
     environment = request.config.getoption('--env')
 
-    load_dotenv(get_mobile_env_path(environment))
+    load_dotenv(helper.get_mobile_env_path(environment))
     settings = Settings()
     options = UiAutomator2Options()
 
@@ -53,7 +55,7 @@ def set_mobile_browser(request):
     elif environment == 'local':
         options.load_capabilities({
             'appium:automationName': settings.automationName,
-            'appium:app': get_app_path(settings.app),
+            'appium:app': helper.get_app_path(settings.app),
             'platformName': settings.platformName,
             'appium:appWaitActivity': settings.appWaitActivity
         })
@@ -65,6 +67,6 @@ def set_mobile_browser(request):
     if environment == 'browserstack':
         session_id = browser.execute_script('browserstack_executor: {"action": "getSessionDetails"}')
         video_url = json.loads(session_id)['video_url']
-        mobile_attach_video(video_url)
+        helper.mobile_attach_video(video_url)
 
     browser.quit()
