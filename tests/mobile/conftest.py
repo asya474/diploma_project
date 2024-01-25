@@ -5,7 +5,7 @@ from appium import webdriver
 from appium.options.android import UiAutomator2Options
 from dotenv import load_dotenv
 from selene.support.shared import browser
-import helper
+from . import helper as helper
 from config import Settings
 
 
