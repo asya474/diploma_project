@@ -4,14 +4,14 @@ tests/api/.pytest_cache
 .DS_Store
 files/.DS_Store
 tests/web/.pytest_cache
-helper_for_test/__pycache__
+helper/__pycache__
 tests/api/__pycache__
-helper_for_test/mobile_helper/__pycache__
+helper/mobile_helper/__pycache__
 pages/mobile_pages/__pycache__
 tests/mobile/__pycache__
-helper_for_test/api_helpers/__pycache__
+helper/api_helpers/__pycache__
 .venv
-helper_for_test/web_helpers/__pycache__
+helper/web_helpers/__pycache__
 pages/web_pages/__pycache__
 tests/web/__pycache__
 
