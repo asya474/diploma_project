@@ -1,5 +1,6 @@
 from allure_commons._allure import step
-from selene import browser, have
+from selene import have
+from selene.support.shared import browser
 
 from helper.api_helpers.utils import demowebshop_api_post
 

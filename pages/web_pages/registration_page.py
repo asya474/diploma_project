@@ -1,6 +1,6 @@
 import os
-
-from selene import browser, be, have, command
+from selene.support.shared import browser
+from selene import be, have, command
 
 
 class PracticeFormRegistrationFactCheck:

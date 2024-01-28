@@ -43,16 +43,16 @@ files = [
 
 [[package]]
 name = "appium-python-client"
-version = "2.11.1"
+version = "3.1.1"
 description = "Python client for Appium"
 optional = false
 python-versions = "*"
 files = [
-    {file = "Appium-Python-Client-2.11.1.tar.gz", hash = "sha256:0e9d3a76f03217add68a9389d5630a7b63355a6bd5ba70711c47ed3463908d33"},
+    {file = "Appium-Python-Client-3.1.1.tar.gz", hash = "sha256:c1e70d4a0a64c1e14e4693a8bd576d9489a9b722ce6be9f2e006c4ae7cb9e77e"},
 ]
 
 [package.dependencies]
-selenium = ">=4.1,<5.0"
+selenium = ">=4.12,<5.0"
 
 [[package]]
 name = "astroid"
@@ -271,60 +271,6 @@ files = [
     {file = "colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"},
     {file = "colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"},
 ]
-
-[[package]]
-name = "cryptography"
-version = "42.0.1"
-description = "cryptography is a package which provides cryptographic recipes and primitives to Python developers."
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "cryptography-42.0.1-cp37-abi3-macosx_10_12_universal2.whl", hash = "sha256:265bdc693570b895eb641410b8fc9e8ddbce723a669236162b9d9cfb70bd8d77"},
-    {file = "cryptography-42.0.1-cp37-abi3-macosx_10_12_x86_64.whl", hash = "sha256:160fa08dfa6dca9cb8ad9bd84e080c0db6414ba5ad9a7470bc60fb154f60111e"},
-    {file = "cryptography-42.0.1-cp37-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:727387886c9c8de927c360a396c5edcb9340d9e960cda145fca75bdafdabd24c"},
-    {file = "cryptography-42.0.1-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:4d84673c012aa698555d4710dcfe5f8a0ad76ea9dde8ef803128cc669640a2e0"},
-    {file = "cryptography-42.0.1-cp37-abi3-manylinux_2_28_aarch64.whl", hash = "sha256:e6edc3a568667daf7d349d7e820783426ee4f1c0feab86c29bd1d6fe2755e009"},
-    {file = "cryptography-42.0.1-cp37-abi3-manylinux_2_28_x86_64.whl", hash = "sha256:d50718dd574a49d3ef3f7ef7ece66ef281b527951eb2267ce570425459f6a404"},
-    {file = "cryptography-42.0.1-cp37-abi3-musllinux_1_1_aarch64.whl", hash = "sha256:9544492e8024f29919eac2117edd8c950165e74eb551a22c53f6fdf6ba5f4cb8"},
-    {file = "cryptography-42.0.1-cp37-abi3-musllinux_1_1_x86_64.whl", hash = "sha256:ab6b302d51fbb1dd339abc6f139a480de14d49d50f65fdc7dff782aa8631d035"},
-    {file = "cryptography-42.0.1-cp37-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:2fe16624637d6e3e765530bc55caa786ff2cbca67371d306e5d0a72e7c3d0407"},
-    {file = "cryptography-42.0.1-cp37-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:ed1b2130f5456a09a134cc505a17fc2830a1a48ed53efd37dcc904a23d7b82fa"},
-    {file = "cryptography-42.0.1-cp37-abi3-win32.whl", hash = "sha256:e5edf189431b4d51f5c6fb4a95084a75cef6b4646c934eb6e32304fc720e1453"},
-    {file = "cryptography-42.0.1-cp37-abi3-win_amd64.whl", hash = "sha256:6bfd823b336fdcd8e06285ae8883d3d2624d3bdef312a0e2ef905f332f8e9302"},
-    {file = "cryptography-42.0.1-cp39-abi3-macosx_10_12_universal2.whl", hash = "sha256:351db02c1938c8e6b1fee8a78d6b15c5ccceca7a36b5ce48390479143da3b411"},
-    {file = "cryptography-42.0.1-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:430100abed6d3652208ae1dd410c8396213baee2e01a003a4449357db7dc9e14"},
-    {file = "cryptography-42.0.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2dff7a32880a51321f5de7869ac9dde6b1fca00fc1fef89d60e93f215468e824"},
-    {file = "cryptography-42.0.1-cp39-abi3-manylinux_2_28_aarch64.whl", hash = "sha256:b512f33c6ab195852595187af5440d01bb5f8dd57cb7a91e1e009a17f1b7ebca"},
-    {file = "cryptography-42.0.1-cp39-abi3-manylinux_2_28_x86_64.whl", hash = "sha256:95d900d19a370ae36087cc728e6e7be9c964ffd8cbcb517fd1efb9c9284a6abc"},
-    {file = "cryptography-42.0.1-cp39-abi3-musllinux_1_1_aarch64.whl", hash = "sha256:6ac8924085ed8287545cba89dc472fc224c10cc634cdf2c3e2866fe868108e77"},
-    {file = "cryptography-42.0.1-cp39-abi3-musllinux_1_1_x86_64.whl", hash = "sha256:cb2861a9364fa27d24832c718150fdbf9ce6781d7dc246a516435f57cfa31fe7"},
-    {file = "cryptography-42.0.1-cp39-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:25ec6e9e81de5d39f111a4114193dbd39167cc4bbd31c30471cebedc2a92c323"},
-    {file = "cryptography-42.0.1-cp39-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:9d61fcdf37647765086030d81872488e4cb3fafe1d2dda1d487875c3709c0a49"},
-    {file = "cryptography-42.0.1-cp39-abi3-win32.whl", hash = "sha256:16b9260d04a0bfc8952b00335ff54f471309d3eb9d7e8dbfe9b0bd9e26e67881"},
-    {file = "cryptography-42.0.1-cp39-abi3-win_amd64.whl", hash = "sha256:7911586fc69d06cd0ab3f874a169433db1bc2f0e40988661408ac06c4527a986"},
-    {file = "cryptography-42.0.1-pp310-pypy310_pp73-macosx_10_12_x86_64.whl", hash = "sha256:d3594947d2507d4ef7a180a7f49a6db41f75fb874c2fd0e94f36b89bfd678bf2"},
-    {file = "cryptography-42.0.1-pp310-pypy310_pp73-manylinux_2_28_aarch64.whl", hash = "sha256:8d7efb6bf427d2add2f40b6e1e8e476c17508fa8907234775214b153e69c2e11"},
-    {file = "cryptography-42.0.1-pp310-pypy310_pp73-manylinux_2_28_x86_64.whl", hash = "sha256:126e0ba3cc754b200a2fb88f67d66de0d9b9e94070c5bc548318c8dab6383cb6"},
-    {file = "cryptography-42.0.1-pp310-pypy310_pp73-win_amd64.whl", hash = "sha256:802d6f83233cf9696b59b09eb067e6b4d5ae40942feeb8e13b213c8fad47f1aa"},
-    {file = "cryptography-42.0.1-pp39-pypy39_pp73-macosx_10_12_x86_64.whl", hash = "sha256:0b7cacc142260ada944de070ce810c3e2a438963ee3deb45aa26fd2cee94c9a4"},
-    {file = "cryptography-42.0.1-pp39-pypy39_pp73-manylinux_2_28_aarch64.whl", hash = "sha256:32ea63ceeae870f1a62e87f9727359174089f7b4b01e4999750827bf10e15d60"},
-    {file = "cryptography-42.0.1-pp39-pypy39_pp73-manylinux_2_28_x86_64.whl", hash = "sha256:d3902c779a92151f134f68e555dd0b17c658e13429f270d8a847399b99235a3f"},
-    {file = "cryptography-42.0.1-pp39-pypy39_pp73-win_amd64.whl", hash = "sha256:50aecd93676bcca78379604ed664c45da82bc1241ffb6f97f6b7392ed5bc6f04"},
-    {file = "cryptography-42.0.1.tar.gz", hash = "sha256:fd33f53809bb363cf126bebe7a99d97735988d9b0131a2be59fbf83e1259a5b7"},
-]
-
-[package.dependencies]
-cffi = {version = ">=1.12", markers = "platform_python_implementation != \"PyPy\""}
-
-[package.extras]
-docs = ["sphinx (>=5.3.0)", "sphinx-rtd-theme (>=1.1.1)"]
-docstest = ["pyenchant (>=1.6.11)", "readme-renderer", "sphinxcontrib-spelling (>=4.0.1)"]
-nox = ["nox"]
-pep8test = ["check-sdist", "click", "mypy", "ruff"]
-sdist = ["build"]
-ssh = ["bcrypt (>=3.1.5)"]
-test = ["certifi", "pretend", "pytest (>=6.2.0)", "pytest-benchmark", "pytest-cov", "pytest-xdist"]
-test-randomorder = ["pytest-randomly"]
 
 [[package]]
 name = "curlify"
@@ -718,24 +664,6 @@ spelling = ["pyenchant (>=3.2,<4.0)"]
 testutils = ["gitpython (>3)"]
 
 [[package]]
-name = "pyopenssl"
-version = "24.0.0"
-description = "Python wrapper module around the OpenSSL library"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "pyOpenSSL-24.0.0-py3-none-any.whl", hash = "sha256:ba07553fb6fd6a7a2259adb9b84e12302a9a8a75c44046e8bb5d3e5ee887e3c3"},
-    {file = "pyOpenSSL-24.0.0.tar.gz", hash = "sha256:6aa33039a93fffa4563e655b61d11364d01264be8ccb49906101e02a334530bf"},
-]
-
-[package.dependencies]
-cryptography = ">=41.0.5,<43"
-
-[package.extras]
-docs = ["sphinx (!=5.2.0,!=5.2.0.post0,!=7.2.5)", "sphinx-rtd-theme"]
-test = ["flaky", "pretend", "pytest (>=3.0.1)"]
-
-[[package]]
 name = "pysocks"
 version = "1.7.1"
 description = "A Python SOCKS client module. See https://github.com/Anorov/PySocks for more information."
@@ -749,13 +677,13 @@ files = [
 
 [[package]]
 name = "pytest"
-version = "7.4.4"
+version = "8.0.0"
 description = "pytest: simple powerful testing with Python"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "pytest-7.4.4-py3-none-any.whl", hash = "sha256:b090cdf5ed60bf4c45261be03239c2c1c22df034fbffe691abe93cd80cea01d8"},
-    {file = "pytest-7.4.4.tar.gz", hash = "sha256:2cf0005922c6ace4a3e2ec8b4080eb0d9753fdc93107415332f50ce9e7994280"},
+    {file = "pytest-8.0.0-py3-none-any.whl", hash = "sha256:50fb9cbe836c3f20f0dfa99c565201fb75dc54c8d76373cd1bde06b06657bdb6"},
+    {file = "pytest-8.0.0.tar.gz", hash = "sha256:249b1b0864530ba251b7438274c4d251c58d868edaaec8762893ad4a0d71c36c"},
 ]
 
 [package.dependencies]
@@ -763,7 +691,7 @@ colorama = {version = "*", markers = "sys_platform == \"win32\""}
 exceptiongroup = {version = ">=1.0.0rc8", markers = "python_version < \"3.11\""}
 iniconfig = "*"
 packaging = "*"
-pluggy = ">=0.12,<2.0"
+pluggy = ">=1.3.0,<2.0"
 tomli = {version = ">=1.0.0", markers = "python_version < \"3.11\""}
 
 [package.extras]
@@ -785,13 +713,13 @@ cli = ["click (>=5.0)"]
 
 [[package]]
 name = "referencing"
-version = "0.32.1"
+version = "0.33.0"
 description = "JSON Referencing + Python"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "referencing-0.32.1-py3-none-any.whl", hash = "sha256:7e4dc12271d8e15612bfe35792f5ea1c40970dadf8624602e33db2758f7ee554"},
-    {file = "referencing-0.32.1.tar.gz", hash = "sha256:3c57da0513e9563eb7e203ebe9bb3a1b509b042016433bd1e45a2853466c3dd3"},
+    {file = "referencing-0.33.0-py3-none-any.whl", hash = "sha256:39240f2ecc770258f28b642dd47fd74bc8b02484de54e1882b74b35ebd779bd5"},
+    {file = "referencing-0.33.0.tar.gz", hash = "sha256:c775fedf74bc0f9189c2a3be1c12fd03e8c23f4d371dce795df44e06c5b412f7"},
 ]
 
 [package.dependencies]
@@ -929,34 +857,37 @@ files = [
 
 [[package]]
 name = "selene"
-version = "2.0.0b5"
+version = "2.0.0rc7"
 description = "User-oriented browser tests in Python (Selenide port)"
 optional = false
-python-versions = ">=3.7,<4.0"
+python-versions = ">=3.8,<4.0"
 files = [
-    {file = "selene-2.0.0b5-py3-none-any.whl", hash = "sha256:c296fffa99b7d6d8eb3f0df704ec6dbb3c73ac314c8299b6ae1ed0b53613fd9e"},
-    {file = "selene-2.0.0b5.tar.gz", hash = "sha256:79adb62ba133b98d8c38c93e413b11f92059b2540e18e6d4a3c6076b4fa3fc95"},
+    {file = "selene-2.0.0rc7-py3-none-any.whl", hash = "sha256:05a5a83f399cc6b9b6331c9c31dd55978c4456c0b060ceb72f6df28352dab66c"},
+    {file = "selene-2.0.0rc7.tar.gz", hash = "sha256:b9f35b43706f8117d6e54f67ebdba2b7d5c6b9e8b916d0cb547a1a13da55d0f3"},
 ]
 
 [package.dependencies]
 future = "*"
-selenium = "4.2.0"
-webdriver-manager = "3.7.0"
+selenium = ">=4.12.0"
+typing-extensions = ">=4.9.0"
 
 [[package]]
 name = "selenium"
-version = "4.2.0"
+version = "4.17.2"
 description = ""
 optional = false
-python-versions = "~=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "selenium-4.2.0-py3-none-any.whl", hash = "sha256:ba5b2633f43cf6fe9d308fa4a6996e00a101ab9cb1aad6fd91ae1f3dbe57f56f"},
+    {file = "selenium-4.17.2-py3-none-any.whl", hash = "sha256:5aee79026c07985dc1b0c909f34084aa996dfe5b307602de9016d7a621a473f2"},
+    {file = "selenium-4.17.2.tar.gz", hash = "sha256:d43d6972e516855fb242ef9ce4ce759057b115070e702e7b1c1032fe7b38d87b"},
 ]
 
 [package.dependencies]
+certifi = ">=2021.10.8"
 trio = ">=0.17,<1.0"
 trio-websocket = ">=0.9,<1.0"
-urllib3 = {version = ">=1.26,<2.0", extras = ["secure", "socks"]}
+typing_extensions = ">=4.9.0"
+urllib3 = {version = ">=1.26,<3", extras = ["socks"]}
 
 [[package]]
 name = "sniffio"
@@ -1051,51 +982,36 @@ files = [
 
 [[package]]
 name = "urllib3"
-version = "1.26.18"
+version = "2.1.0"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
+python-versions = ">=3.8"
 files = [
-    {file = "urllib3-1.26.18-py2.py3-none-any.whl", hash = "sha256:34b97092d7e0a3a8cf7cd10e386f401b3737364026c45e622aa02903dffe0f07"},
-    {file = "urllib3-1.26.18.tar.gz", hash = "sha256:f8ecc1bba5667413457c529ab955bf8c67b45db799d159066261719e328580a0"},
+    {file = "urllib3-2.1.0-py3-none-any.whl", hash = "sha256:55901e917a5896a349ff771be919f8bd99aff50b79fe58fec595eb37bbc56bb3"},
+    {file = "urllib3-2.1.0.tar.gz", hash = "sha256:df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"},
 ]
 
 [package.dependencies]
-certifi = {version = "*", optional = true, markers = "extra == \"secure\""}
-cryptography = {version = ">=1.3.4", optional = true, markers = "extra == \"secure\""}
-idna = {version = ">=2.0.0", optional = true, markers = "extra == \"secure\""}
-pyOpenSSL = {version = ">=0.14", optional = true, markers = "extra == \"secure\""}
-PySocks = {version = ">=1.5.6,<1.5.7 || >1.5.7,<2.0", optional = true, markers = "extra == \"socks\""}
-urllib3-secure-extra = {version = "*", optional = true, markers = "extra == \"secure\""}
+pysocks = {version = ">=1.5.6,<1.5.7 || >1.5.7,<2.0", optional = true, markers = "extra == \"socks\""}
 
 [package.extras]
-brotli = ["brotli (==1.0.9)", "brotli (>=1.0.9)", "brotlicffi (>=0.8.0)", "brotlipy (>=0.6.0)"]
-secure = ["certifi", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "ipaddress", "pyOpenSSL (>=0.14)", "urllib3-secure-extra"]
-socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
-
-[[package]]
-name = "urllib3-secure-extra"
-version = "0.1.0"
-description = "Marker library to detect whether urllib3 was installed with the deprecated [secure] extra"
-optional = false
-python-versions = "*"
-files = [
-    {file = "urllib3-secure-extra-0.1.0.tar.gz", hash = "sha256:ee9409cbfeb4b8609047be4c32fb4317870c602767e53fd8a41005ebe6a41dff"},
-    {file = "urllib3_secure_extra-0.1.0-py2.py3-none-any.whl", hash = "sha256:f7adcb108b4d12a4b26b99eb60e265d087f435052a76aefa396b6ee85e9a6ef9"},
-]
+brotli = ["brotli (>=1.0.9)", "brotlicffi (>=0.8.0)"]
+socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
+zstd = ["zstandard (>=0.18.0)"]
 
 [[package]]
 name = "webdriver-manager"
-version = "3.7.0"
+version = "4.0.1"
 description = "Library provides the way to automatically manage drivers for different browsers"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 files = [
-    {file = "webdriver_manager-3.7.0-py2.py3-none-any.whl", hash = "sha256:ee09f7c5d9c61ca9cf2b78a036355f617f5dede2d68b7d2d77877d1d48df1361"},
-    {file = "webdriver_manager-3.7.0.tar.gz", hash = "sha256:4a7247086b181d3a077a7f0be71b2f8e297d213ddd563ecea263dcb17e4e865f"},
+    {file = "webdriver_manager-4.0.1-py2.py3-none-any.whl", hash = "sha256:d7970052295bb9cda2c1a24cf0b872dd2c41ababcc78f7b6b8dc37a41e979a7e"},
+    {file = "webdriver_manager-4.0.1.tar.gz", hash = "sha256:25ec177c6a2ce9c02fb8046f1b2732701a9418d6a977967bb065d840a3175d87"},
 ]
 
 [package.dependencies]
+packaging = "*"
 python-dotenv = "*"
 requests = "*"
 
@@ -1116,4 +1032,4 @@ h11 = ">=0.9.0,<1"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "fcfd1d6cfa113af6c57f09e13aee0314479f5e5eb68acb9d76822e0fdf3a7a90"
+content-hash = "db895414de144d74fb88726aad225579e552c07f79442ad9705eeb86bc3130f7"

@@ -1,6 +1,5 @@
-from typing import Optional
-
 from pydantic_settings import BaseSettings
+from typing import Optional
 
 
 class Settings(BaseSettings):
@@ -25,19 +24,19 @@ class Settings(BaseSettings):
 
     remoteBrowser: str = None
 
-    class Config:
-        fields = {
-            'platformName': 'platformName',
-            'platformVersion': 'platformVersion',
-            'deviceName': 'deviceName',
-            'app': 'app',
-            'appWaitActivity': 'appWaitActivity',
-            'automationName': 'automationName',
-            'projectName': 'projectName',
-            'buildName':'buildName',
-            'sessionName': 'sessionName',
-            'networkLogs': 'networkLogs',
-            'userName': 'userName',
-            'accessKey': 'accessKey',
-            'remoteBrowser': 'remoteBrowser'
-        }
+    #class Config:
+    #    fields = {
+    #        'platformName': 'platformName',
+    #        'platformVersion': 'platformVersion',
+    #        'deviceName': 'deviceName',
+    #        'app': 'app',
+    #        'appWaitActivity': 'appWaitActivity',
+    #        'automationName': 'automationName',
+    #        'projectName': 'projectName',
+    #        'buildName':'buildName',
+    #        'sessionName': 'sessionName',
+    #        'networkLogs': 'networkLogs',
+    #        'userName': 'userName',
+    #        'accessKey': 'accessKey',
+    #        'remoteBrowser': 'remoteBrowser'
+    #    }

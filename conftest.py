@@ -4,7 +4,6 @@ import pytest
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
 from dotenv import load_dotenv
-# from selene import browser
 from selene.support.shared import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
