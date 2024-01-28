@@ -1,7 +1,7 @@
 import allure
 from allure_commons.types import Severity
 
-from helper.web_helpers.users import User
+from helper_for_test.web_helpers.users import User
 from pages.web_pages.registration_page import PracticeFormRegistrationFactCheck
 
 practice_form = PracticeFormRegistrationFactCheck()

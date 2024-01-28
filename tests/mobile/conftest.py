@@ -7,7 +7,6 @@ from dotenv import load_dotenv
 from selene.support.shared import browser
 
 from config import Settings
-from . import helper as helper
 
 
 def pytest_addoption(parser):
@@ -23,7 +22,7 @@ def pytest_addoption(parser):
 def set_mobile_browser(request):
     environment = request.config.getoption('--env')
 
-    load_dotenv(helper.get_env_path.get_mobile_env_path(environment))
+    load_dotenv(tests.helper.get_env_path.get_mobile_env_path(environment))
     settings = Settings()
     options = UiAutomator2Options()
 
@@ -52,7 +51,7 @@ def set_mobile_browser(request):
     elif environment == 'local':
         options.load_capabilities({
             'appium:automationName': settings.automationName,
-            'appium:app': helper.get_env_path.get_app_path(settings.app),
+            'appium:app': tests.helper.get_env_path.get_app_path(settings.app),
             'platformName': settings.platformName,
             'appium:appWaitActivity': settings.appWaitActivity
         })
@@ -64,6 +63,6 @@ def set_mobile_browser(request):
     if environment == 'browserstack':
         session_id = browser.execute_script('browserstack_executor: {"action": "getSessionDetails"}')
         video_url = json.loads(session_id)['video_url']
-        helper.attach_helpers.mobile_attach_video(video_url)
+        tests.helper.attach_helpers.mobile_attach_video(video_url)
 
     browser.quit()

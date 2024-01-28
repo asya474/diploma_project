@@ -4,7 +4,7 @@ from selene.support.shared import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from helper.attach_helpers import add_screenshot, add_logs, add_html, add_video
+from helper_for_test.attach_helpers import add_screenshot, add_logs, add_html, add_video
 
 
 @pytest.fixture(scope="function")

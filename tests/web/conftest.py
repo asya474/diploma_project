@@ -1,10 +1,14 @@
+import sys
+
+sys.path.insert(0, '../helper/attach_helpers.py')
 import pytest
+from helper_for_test import attach_helpers
 from selene import browser
 from selene.support.shared import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from helper.attach_helpers import add_screenshot, add_logs, add_html, add_video
+
 
 
 @pytest.fixture(scope='function', autouse=True)
@@ -28,9 +32,9 @@ def setup_browser(request):
 
     yield browser
 
-    add_screenshot(browser)
-    add_logs(browser)
-    add_html(browser)
-    add_video(browser)
+    attach_helpers.add_screenshot(browser)
+    attach_helpers.add_logs(browser)
+    attach_helpers.add_html(browser)
+    attach_helpers.add_video(browser)
 
     browser.quit()

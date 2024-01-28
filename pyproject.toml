@@ -4,6 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["asya474 <asya474@gmail.com>"]
 readme = "README.md"
+packages = [{include = "diploma-project"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"

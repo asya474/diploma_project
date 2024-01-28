@@ -1,7 +1,7 @@
 from allure_commons._allure import step
 from selene import browser, have
 
-from helper.api_helpers.utils import demowebshop_api_post
+from helper_for_test.api_helpers.utils import demowebshop_api_post
 
 
 def test_add_different_items_to_cart_with_api(browser_setup):

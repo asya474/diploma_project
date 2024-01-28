@@ -2,7 +2,7 @@ import jsonschema
 import requests
 from requests import Response
 
-from helper.api_helpers.utils import load_schema
+from helper_for_test.api_helpers.utils import load_schema
 
 
 def test_get_single_user_successfully(browser_setup):
