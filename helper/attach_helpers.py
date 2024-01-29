@@ -1,13 +1,26 @@
-import allure
 from allure_commons.types import AttachmentType
-
+import allure
+from selene import browser
 
 def mobile_attach_video(m_video_url):
     html = "<html><body><video width='100%' height='100%' controls autoplay><source src='" + m_video_url \
            + "'></video></body></html>"
     allure.attach(html, 'video', AttachmentType.HTML, '.html')
 
+def mobile_bstack_screenshot():
+    allure.attach(
+        browser.driver.get_screenshot_as_png(),
+        name='screenshot',
+        attachment_type=allure.attachment_type.PNG,
+    )
 
+
+def mobile_bstack_page_source():
+    allure.attach(
+        browser.driver.page_source,
+        name='page_source_xml',
+        attachment_type=allure.attachment_type.XML,
+    )
 def add_screenshot(browser):
     png = browser.driver.get_screenshot_as_png()
     allure.attach(body=png, name='screenshot', attachment_type=AttachmentType.PNG, extension='.png')

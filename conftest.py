@@ -1,16 +1,16 @@
-import json
-
+import os
+import allure
+import allure_commons
 import pytest
-from appium import webdriver
-from appium.options.android import UiAutomator2Options
 from dotenv import load_dotenv
+from selene import support
 from selene.support.shared import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from config import Settings
-from helper import attach_helpers, get_env_path
-from helper.attach_helpers import add_screenshot, add_logs, add_html, add_video
+from helper import attach_helpers
+from helper.attach_helpers import add_screenshot, add_logs, add_html, add_video, mobile_attach_video, \
+    mobile_bstack_screenshot, mobile_bstack_page_source
 
 
 @pytest.fixture(scope="function")
@@ -36,65 +36,6 @@ def browser_setup():
     add_logs(browser)
     add_html(browser)
     add_video(browser)
-
-    browser.quit()
-
-
-def pytest_addoption(parser):
-    parser.addoption(
-        '--env',
-        help='Environment for test',
-        choices=['browserstack', 'local'],
-        default='browserstack'
-    )
-
-
-@pytest.fixture(scope='function')
-def set_mobile_browser(request):
-    environment = request.config.getoption('--env')
-
-    load_dotenv(get_env_path.get_mobile_env_path(environment))
-    settings = Settings()
-    options = UiAutomator2Options()
-
-    if environment == 'browserstack':
-        options.load_capabilities({
-            "platformName": settings.platformName,
-            "platformVersion": settings.platformVersion,
-            "deviceName": settings.deviceName,
-
-            # Set URL of the application under test
-            "app": settings.app,
-
-            # Set other BrowserStack capabilities
-            'bstack:options': {
-                "projectName": settings.projectName,
-                "buildName": settings.buildName,
-                "sessionName": settings.sessionName,
-                'networkLogs': settings.networkLogs,
-
-                # Set your access credentials
-                "userName": settings.userName,
-                "accessKey": settings.accessKey
-            }
-        })
-
-    elif environment == 'local':
-        options.load_capabilities({
-            'appium:automationName': settings.automationName,
-            'appium:app': get_env_path.get_app_path(settings.app),
-            'platformName': settings.platformName,
-            'appium:appWaitActivity': settings.appWaitActivity
-        })
-
-    browser.config.driver = webdriver.Remote(settings.remoteBrowser, options=options)
-
-    yield environment
-
-    if environment == 'browserstack':
-        session_id = browser.execute_script('browserstack_executor: {"action": "getSessionDetails"}')
-        video_url = json.loads(session_id)['video_url']
-        attach_helpers.mobile_attach_video(video_url)
 
     browser.quit()
 
@@ -126,3 +67,56 @@ def setup_browser(request):
     attach_helpers.add_video(browser)
 
     browser.quit()
+
+
+def pytest_addoption(parser):
+    parser.addoption(
+        "--context",
+        default="bstack",
+        help="Specify the test context"
+    )
+
+
+def pytest_configure(config):
+    context = config.getoption("--context")
+    env_file_path = f".env.{context}"
+
+    if os.path.exists(env_file_path):
+        load_dotenv(dotenv_path=env_file_path)
+    else:
+        print(f"Warning: Configuration file '{env_file_path}' not found.")
+
+
+@pytest.fixture
+def context(request):
+    return request.config.getoption("--context")
+
+
+@pytest.fixture(scope='function', autouse=True)
+def android_mobile_management(context):
+    from config import config
+    options = config.to_driver_options(context=context)
+
+    with allure.step('setup app session'):
+        browser.config.driver = webdriver.Remote(
+            options.get_capability('remote_url'),
+            options=options
+        )
+
+    browser.config.timeout = 10.0
+
+    browser.config._wait_decorator = support._logging.wait_with(
+        context=allure_commons._allure.StepContext)
+
+    yield
+
+    mobile_bstack_screenshot()
+    mobile_bstack_page_source()
+
+    session_id = browser.driver.session_id
+
+    with allure.step('tear down app session with id' + session_id):
+        browser.quit()
+
+    if context == 'bstack':
+        mobile_attach_video(session_id)

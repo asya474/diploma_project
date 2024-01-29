@@ -30,3 +30,12 @@ def path(file_name):
     tests_folder_path = base_path / 'tests'
     absolute_file_path = tests_folder_path / file_name
     return str(absolute_file_path.resolve())
+
+def abs_path_from_project(relative_path):
+
+    return (
+        Path(__file__)
+        .parent.parent.joinpath(relative_path)
+        .absolute()
+        .__str__()
+    )
