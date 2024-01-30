@@ -13,38 +13,24 @@ from helper.attach_helpers import add_screenshot, add_logs, add_html, add_video,
 from helper.get_env_path import get_personal_env_path
 
 
-@pytest.fixture()
-def api_browser():
-    options = Options()
-    selenoid_capabilities = {
-        "browserName": "chrome",
-        "browserVersion": "100.0",
-        "selenoid:options": {
-            "enableVNC": True,
-            "enableVideo": True
-        }
-    }
-    options.capabilities.update(selenoid_capabilities)
-    driver = webdriver.Remote(command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub", options=options)
-    browser.config.driver = driver
-    browser.config.window_width = 1920
-    browser.config.window_height = 1080
-
-    yield browser
-
-    add_screenshot(browser)
-    add_logs(browser)
-    add_html(browser)
-    add_video(browser)
-
-    browser.quit()
-
 
 def pytest_addoption(parser):
     parser.addoption(
         "--context",
         default="bstack",
         help="Specify the test context"
+    )
+    parser.addoption(
+        '--browser',
+        help='Browser for test',
+        choices=['firefox', 'chrome'],
+        default='chrome'
+    )
+    parser.addoption(
+        '--browser_version',
+        help='Version of browser',
+        choices=['100.0', '98.0'],
+        default='100.0'
     )
 
 
@@ -63,49 +49,8 @@ def context(request):
     return request.config.getoption("--context")
 
 
+
 @pytest.fixture()
-def android_mobile_management(context):
-    from config import config
-    options = config.to_driver_options(context=context)
-
-    with allure.step('setup app session'):
-        browser.config.driver = webdriver.Remote(
-            options.get_capability('remote_url'),
-            options=options
-        )
-
-    browser.config.timeout = 10.0
-
-    browser.config._wait_decorator = support._logging.wait_with(
-        context=allure_commons._allure.StepContext)
-
-    yield
-
-    session_id = browser.driver.session_id
-
-    with allure.step('tear down app session with id' + session_id):
-        browser.quit()
-
-    if context == 'bstack':
-        mobile_attach_video(session_id)
-
-
-def pytest_addoption(parser):
-    parser.addoption(
-        '--browser',
-        help='Browser for test',
-        choices=['firefox', 'chrome'],
-        default='chrome'
-    )
-    parser.addoption(
-        '--browser_version',
-        help='Version of browser',
-        choices=['100.0', '98.0'],
-        default='100.0'
-    )
-
-
-@pytest.fixture(scope='function')
 def web_browser(request):
     browser_name = request.config.getoption('--browser')
     browser_version = request.config.getoption('--browser_version')
@@ -143,3 +88,56 @@ def web_browser(request):
     attach_helpers.add_video(browser)
 
     browser.quit()
+
+
+@pytest.fixture()
+def api_browser():
+    options = Options()
+    selenoid_capabilities = {
+        "browserName": "chrome",
+        "browserVersion": "100.0",
+        "selenoid:options": {
+            "enableVNC": True,
+            "enableVideo": True
+        }
+    }
+    options.capabilities.update(selenoid_capabilities)
+    driver = webdriver.Remote(command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub", options=options)
+    browser.config.driver = driver
+    browser.config.window_width = 1920
+    browser.config.window_height = 1080
+
+    yield browser
+
+    add_screenshot(browser)
+    add_logs(browser)
+    add_html(browser)
+    add_video(browser)
+
+    browser.quit()
+
+@pytest.fixture()
+def android_mobile_management(context):
+    from config import config
+    options = config.to_driver_options(context=context)
+
+    with allure.step('setup app session'):
+        browser.config.driver = webdriver.Remote(
+            options.get_capability('remote_url'),
+            options=options
+        )
+
+    browser.config.timeout = 10.0
+
+    browser.config._wait_decorator = support._logging.wait_with(
+        context=allure_commons._allure.StepContext)
+
+    yield
+
+    session_id = browser.driver.session_id
+
+    with allure.step('tear down app session with id' + session_id):
+        browser.quit()
+
+    if context == 'bstack':
+        mobile_attach_video(session_id)
