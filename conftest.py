@@ -47,7 +47,6 @@ def pytest_configure(config):
 def context(request):
     return request.config.getoption("--context")
 
-
 @pytest.fixture()
 def web_browser(request):
     browser_name = request.config.getoption('--browser')
@@ -75,8 +74,6 @@ def web_browser(request):
     browser.config.timeout = 6.0
     browser.config.window_width = 333
     browser.config.window_height = 628
-    size = request.param
-    browser.driver.set_window_size(size[0], size[1])
 
     yield browser
 
