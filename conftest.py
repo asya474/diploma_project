@@ -12,7 +12,7 @@ from helper import attach_helpers
 from helper.attach_helpers import add_screenshot, add_logs, add_html, add_video, mobile_attach_video
 
 
-@pytest.fixture(scope="function")
+@pytest.fixture()
 def browser_setup():
     options = Options()
     selenoid_capabilities = {
@@ -39,7 +39,7 @@ def browser_setup():
     browser.quit()
 
 
-@pytest.fixture(scope='function', autouse=True)
+@pytest.fixture()
 def setup_browser(request):
     options = Options()
     selenoid_capabilities = {
@@ -91,7 +91,7 @@ def context(request):
     return request.config.getoption("--context")
 
 
-@pytest.fixture(scope='function', autouse=True)
+@pytest.fixture()
 def android_mobile_management(context):
     from config import config
     options = config.to_driver_options(context=context)
