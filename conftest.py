@@ -67,13 +67,14 @@ def web_browser(request):
     login = os.getenv('SELENOID_LOGIN')
     password = os.getenv('SELENOID_PASSWORD')
 
-    browser.config.driver = webdriver.Remote(f'https://{login}:{password}@selenoid.autotests.cloud/wd/hub',
+    driver = webdriver.Remote(f'https://{login}:{password}@selenoid.autotests.cloud/wd/hub',
                                              options=options)
 
     browser.config.base_url = "https://demoqa.com"
+    browser.config.driver = driver
     browser.config.timeout = 6.0
     browser.config.window_width = 412
-    browser.config.window_height = 915
+    browser.config.window_height = 914
 
     yield browser
 
