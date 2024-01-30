@@ -9,8 +9,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 from helper import attach_helpers
-from helper.attach_helpers import add_screenshot, add_logs, add_html, add_video, mobile_attach_video, \
-    mobile_bstack_screenshot, mobile_bstack_page_source
+from helper.attach_helpers import add_screenshot, add_logs, add_html, add_video, mobile_attach_video
 
 
 @pytest.fixture(scope="function")
@@ -109,9 +108,6 @@ def android_mobile_management(context):
         context=allure_commons._allure.StepContext)
 
     yield
-
-    mobile_bstack_screenshot()
-    mobile_bstack_page_source()
 
     session_id = browser.driver.session_id
 
