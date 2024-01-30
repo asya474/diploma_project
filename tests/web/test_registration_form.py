@@ -12,7 +12,7 @@ practice_form = PracticeFormRegistrationFactCheck()
 @allure.label("owner", "as.shemetova")
 @allure.description("Registration")
 @allure.feature("Registration")
-def test_student_registration_form(setup_browser):
+def test_student_registration_form(web_browser):
     with allure.step("Открыть страницу регистрации пользователей"):
         practice_form.open()
     with allure.step("Заполнить форму регистрации тестовыми данными"):

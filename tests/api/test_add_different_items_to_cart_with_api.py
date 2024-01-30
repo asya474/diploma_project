@@ -5,7 +5,7 @@ from selene.support.shared import browser
 from helper.api_helpers.utils import demowebshop_api_post
 
 
-def test_add_different_items_to_cart_with_api(browser_setup):
+def test_add_different_items_to_cart_with_api(api_browser):
     browser.config.base_url = 'https://demowebshop.tricentis.com'
     response = demowebshop_api_post('/addproducttocart/details/28/1',
                                     data={"product_attribute_28_7_10": 25,

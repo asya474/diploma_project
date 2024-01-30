@@ -5,7 +5,7 @@ from requests import Response
 from helper.api_helpers.utils import load_schema
 
 
-def test_put_update_200_succesfully(browser_setup):
+def test_put_update_200_succesfully(api_browser):
     url = "https://reqres.in/api/users/2"
     schema = load_schema("put_update.json")
 

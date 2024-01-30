@@ -5,7 +5,7 @@ from selene.support.shared import browser
 from helper.api_helpers.utils import demowebshop_api_post
 
 
-def test_add_4_items_to_cart_with_api(browser_setup):
+def test_add_4_items_to_cart_with_api(api_browser):
     browser.config.base_url = 'https://demowebshop.tricentis.com'
     response = demowebshop_api_post('/addproducttocart/details/45/1', data={"addtocart_45.EnteredQuantity": 4})
     cookie = response.cookies.get("Nop.customer")
