@@ -72,8 +72,8 @@ def web_browser(request):
 
     browser.config.base_url = "https://demoqa.com"
     browser.config.timeout = 6.0
-    browser.config.window_width = 333
-    browser.config.window_height = 628
+    browser.config.window_width = 412
+    browser.config.window_height = 915
 
     yield browser
 
