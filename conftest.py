@@ -13,7 +13,6 @@ from helper.attach_helpers import add_screenshot, add_logs, add_html, add_video,
 from helper.get_env_path import get_personal_env_path
 
 
-
 def pytest_addoption(parser):
     parser.addoption(
         "--context",
@@ -47,7 +46,6 @@ def pytest_configure(config):
 @pytest.fixture
 def context(request):
     return request.config.getoption("--context")
-
 
 
 @pytest.fixture()
@@ -115,6 +113,7 @@ def api_browser():
     add_video(browser)
 
     browser.quit()
+
 
 @pytest.fixture()
 def android_mobile_management(context):
