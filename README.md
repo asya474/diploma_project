@@ -1,6 +1,6 @@
 # Demo test automation project (UI, Mobile, API)
 
-##:page_with_curl:    Content
+## :page_with_curl:    Content
 
 > heavy_check_mark: [Technology stack](#technology-stack)
 >
