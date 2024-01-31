@@ -98,5 +98,7 @@ There are some conditions for local mobile tests running:
 
 ## Telegram notifications using a bot
 
+<img src="files/readme_images/api_telegram.png"   alt="API"/></a>
+<img src="files/readme_images/ui_telegram.png" alt="UI"/></a>
 ## An example of running a test in Selenoid
 ![autotest_gif](files/readme_images/selenoid.gif)
