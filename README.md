@@ -2,15 +2,15 @@
 
 ## :page_with_curl:    Content
 
-> heavy_check_mark: [Technology stack](#technology-stack)
+> :heavy_check_mark: [Technology stack](#technology-stack)
 >
-> heavy_check_mark: [Running Tests in Jenkins](#running_tests_in_jenkins)
+> :heavy_check_mark: [Running Tests in Jenkins](#running_tests_in_jenkins)
 >
-> heavy_check_mark: [Test results report in Allure Report](#allure-report)
+> :heavy_check_mark: [Test results report in Allure Report](#allure-report)
 >
-> heavy_check_mark: [Telegram notifications using a bot](#telegram-notifications-using-a-bot)
+> :heavy_check_mark: [Telegram notifications using a bot](#telegram-notifications-using-a-bot)
 >
-> heavy_check_mark: [An example of running a test in Selenoid](#example-of-running-a-test-in-selenoid)
+> :heavy_check_mark: [An example of running a test in Selenoid](#example-of-running-a-test-in-selenoid)
 
 ## Technology stack
 
