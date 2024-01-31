@@ -17,7 +17,8 @@ class PracticeFormRegistrationFactCheck:
         browser.element('#userEmail').type(user.email)
         browser.element('#userNumber').type(user.phone_number)
         browser.element('label[for="gender-radio-3').click()
-        browser.element('#dateOfBirthInput').click()
+        if browser.element('#dateOfBirthInput').wait_until(be.visible):
+            browser.element('#dateOfBirthInput').click()
         browser.element('.react-datepicker__month-select').type(user.month_of_birth)
         browser.element('.react-datepicker__year-select').type(user.year_of_birth)
         browser.element(

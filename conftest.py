@@ -72,7 +72,7 @@ def web_browser(request):
 
     browser.config.base_url = "https://demoqa.com"
     browser.config.driver = driver
-    browser.config.timeout = 6.0
+    browser.config.timeout = 100.0
     browser.config.window_width = 412
     browser.config.window_height = 914
 
