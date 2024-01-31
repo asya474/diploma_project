@@ -40,7 +40,7 @@ In this project, autotests are written in <code> Python </code> using:
 ## Running Tests in Jenkins
 
 #### UI-tests:
-
+https://jenkins.autotests.cloud/job/asya474_UI_diploma_project/
 ```
 python -m venv .venv
 source .venv/bin/activate
@@ -50,7 +50,7 @@ pytest --browser=${BROWSER} --browser_version=${BROWSER_VERSION} tests/web
 ```
 
 #### API-tests:
-
+https://jenkins.autotests.cloud/job/asya474_API_diploma_project/
 ```
 python -m venv .venv
 source .venv/bin/activate
