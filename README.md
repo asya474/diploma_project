@@ -93,8 +93,6 @@ There are some conditions for local mobile tests running:
 > <code>BROWSER</code> – the browser the tests will be run (_default - <code>chrome</code>_).
 >
 > <code>BROWSER_VERSION</code> – version of the browser the tests will be run (_default - <code>91.0</code>_).
->
-> <code>BROWSER_SIZE</code> – the size of the browser window the tests will be run (_default - <code>1920x1080</code>_).
 
 ## Test results report in Allure Report
 
