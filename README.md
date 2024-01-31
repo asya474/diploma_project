@@ -96,6 +96,9 @@ There are some conditions for local mobile tests running:
 
 ## Test results report in Allure Report
 
+<img src="files/readme_images/api_allure.png"   alt="API"/></a>
+<img src="files/readme_images/ui_allure.png" alt="UI"/></a>
+
 ## Telegram notifications using a bot
 
 <img src="files/readme_images/api_telegram.png"   alt="API"/></a>
