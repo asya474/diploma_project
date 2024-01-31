@@ -15,10 +15,10 @@
 ## Technology stack
 
 <p align="center"></p>
-<a href="https://www.python.org/"><img src="files/readme_images/python.png" width="50" height="50"  alt="PYTHON"/></a>
+<a href="https://www.python.org/"><img src="files/readme_images/python.jpg" width="50" height="50"  alt="PYTHON"/></a>
 <a href="https://www.selenium.dev/"><img src="files/readme_images/selenium.png" width="50" height="50"  alt="SELENIUM"/></a>
 <a href="https://docs.pytest.org/en/"><img src="files/readme_images/pytest.png" width="50" height="50"  alt="PYTEST"/></a>
-<a href="https://www.jetbrains.com/ru-ru/pycharm/"><img src="files/readme_images/pycharm.png" width="100" height="50"  alt="PYCHARM"/></a>
+<a href="https://www.jetbrains.com/ru-ru/pycharm/"><img src="files/readme_images/jetbrains-pycharm5998.jpg" width="100" height="50"  alt="PYCHARM"/></a>
 <a href="https://www.jenkins.io/"><img src="files/readme_images/jenkins.png" width="50" height="50"  alt="JENKINS"/></a>
 <a href="https://python-poetry.org/"><img src="files/readme_images/selene.png" width="50" height="50"  alt="SELENE"/></a>
 
